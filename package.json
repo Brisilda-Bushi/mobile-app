@@ -8,19 +8,36 @@
     "react-native-web": "0.17.1",
     "react-redux": "^7.2.6",
     "redux": "^4.1.2",
+    "redux-mock-store": "^1.5.4",
     "redux-thunk": "^2.4.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.16.5",
+    "@babel/preset-react": "^7.16.5",
+    "@testing-library/react-native": "~7.2.0",
+    "babel-jest": "^27.4.5",
+    "jest": "^27.4.5",
+    "jest-expo": "~41.0.0",
+    "jest-fetch-mock": "~3.0.3",
+    "react-test-renderer": "^17.0.2"
   },
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "test": "jest"
   },
   "version": "1.0.0",
   "private": true,
-  "name": "simplifa-mobile-app"
+  "name": "simplifa-mobile-app",
+  "jest": {
+    "preset": "react-native",
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base)"
+    ]
+  },
+  "automock": false
 }
