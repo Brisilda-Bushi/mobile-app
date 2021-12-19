@@ -1,17 +1,44 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import renderer, { act } from 'react-test-renderer';
 import HomeScreen from '../screens/HomeScreen';
 import { Provider } from 'react-redux';
+import { Store } from "../redux/store";
+import userReducer from '../redux/reducers';
+
+
+jest.useFakeTimers();
+
+const store = { Store };
+
+const tree = renderer.create(
+  <Provider store={Store}>
+    <HomeScreen/>
+   </Provider>)
 
 test('renders correctly', () => {
-  const tree = renderer.create(<HomeScreen />).toJSON();
+  tree.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
+test("call timeout", () => {
+  jest.mock("axios", () => ({
+    get: jest.fn(() => {
+      return Promise.resolve();
+    })
+  }));  
+  act(() => jest.runAllTimers());
+  const text = tree.root.findByProps({testID: "myText"}).props;
+  expect(text.children).toEqual("Mobile App Listing");
+})
 
-// describe("<HomeScreen />", () => {
-//   it('has 1 child', () => {
-//       const tree = renderer.create(<HomeScreen />).toJSON();
-//       expect(tree.children.length).toBe(1);
-//   });
-// });
+test("checking mock api call with axios", () => {
+  jest.mock("axios", () => ({
+    get: jest.fn(() => {
+      return Promise.resolve();
+    })
+  }));
+})
+
+test("status stored properly", () => {
+  expect(userReducer(undefined, {})).toEqual({users: []})
+})

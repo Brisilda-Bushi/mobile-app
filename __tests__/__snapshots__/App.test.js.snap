@@ -1,28 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<View
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
   style={
     Object {
-      "paddingTop": 34,
+      "flex": 1,
+      "top": "5%",
     }
   }
 >
-  <Text
-    style={
+  <Image
+    source={
       Object {
-        "fontSize": 22,
-        "fontWeight": "bold",
-        "textAlign": "center",
+        "uri": "https://images.unsplash.com/photo-1519750783826-e2420f4d687f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=8",
       }
     }
-  >
-    Mobile App Listing
-  </Text>
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  />
+  <View>
+    <Text
+      style={
+        Object {
+          "color": "white",
+          "display": "flex",
+          "flexDirection": "row",
+          "fontSize": 22,
+          "fontWeight": "bold",
+          "padding": 10,
+          "textAlign": "center",
+        }
+      }
+      testID="myText"
+    >
+      Mobile App Listing
+    </Text>
+  </View>
   <RCTScrollView
     contentContainerStyle={
       Object {
-        "paddingBottom": 100,
+        "padding": 20,
       }
     }
     data={Array []}
@@ -42,18 +67,14 @@ exports[`renders correctly 1`] = `
     onScrollEndDrag={[Function]}
     removeClippedSubviews={false}
     renderItem={[Function]}
-    scrollEventThrottle={50}
+    scrollEventThrottle={0.0001}
     stickyHeaderIndices={Array []}
-    style={
-      Object {
-        "padding": 15,
-      }
-    }
+    style={Object {}}
     updateCellsBatchingPeriod={50}
     viewabilityConfigCallbackPairs={Array []}
     windowSize={21}
   >
     <View />
   </RCTScrollView>
-</View>
+</RCTSafeAreaView>
 `;
