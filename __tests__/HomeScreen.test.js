@@ -8,6 +8,8 @@ import userReducer from '../redux/reducers';
 
 jest.useFakeTimers();
 
+jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
+
 const store = { Store };
 
 const tree = renderer.create(

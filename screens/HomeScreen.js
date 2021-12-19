@@ -20,7 +20,7 @@ const sizeOfItem = imgHeight + paddingItem * 2 + marginBottomItem;
 const backgroundImg = 'https://images.unsplash.com/photo-1519750783826-e2420f4d687f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=8'
 
 
-const App = () => {
+const HomeScreen = () => {
   const { users } = useSelector(state => state.userReducer);
   const dispatch = useDispatch();
   const [isLoading, setIsloading] = useState(false);
@@ -157,4 +157,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default App;
+export default HomeScreen;

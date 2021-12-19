@@ -1,0 +1,51 @@
+b494753a0f17103993c5c633b4eef024
+'use strict';
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+
+var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
+
+var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2.default)(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+var React = require('react');
+
+var requireNativeComponent = require("../../../ReactNative/requireNativeComponent");
+
+var RCTRefreshControl = requireNativeComponent('RCTRefreshControl');
+
+var RefreshControlMock = function (_React$Component) {
+  (0, _inherits2.default)(RefreshControlMock, _React$Component);
+
+  var _super = _createSuper(RefreshControlMock);
+
+  function RefreshControlMock() {
+    (0, _classCallCheck2.default)(this, RefreshControlMock);
+    return _super.apply(this, arguments);
+  }
+
+  (0, _createClass2.default)(RefreshControlMock, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      RefreshControlMock.latestRef = this;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return React.createElement(RCTRefreshControl, null);
+    }
+  }]);
+  return RefreshControlMock;
+}(React.Component);
+
+module.exports = RefreshControlMock;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlJlZnJlc2hDb250cm9sTW9jay5qcyJdLCJuYW1lcyI6WyJSZWFjdCIsInJlcXVpcmUiLCJyZXF1aXJlTmF0aXZlQ29tcG9uZW50IiwiUkNUUmVmcmVzaENvbnRyb2wiLCJSZWZyZXNoQ29udHJvbE1vY2siLCJsYXRlc3RSZWYiLCJDb21wb25lbnQiLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFVQTs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBRUEsSUFBTUEsS0FBSyxHQUFHQyxPQUFPLENBQUMsT0FBRCxDQUFyQjs7QUFFQSxJQUFNQyxzQkFBc0IsR0FBR0QsT0FBTywrQ0FBdEM7O0FBSUEsSUFBTUUsaUJBQXVDLEdBQUdELHNCQUFzQixDQUNwRSxtQkFEb0UsQ0FBdEU7O0lBSU1FLGtCOzs7Ozs7Ozs7Ozs7V0FFSiw2QkFBb0I7QUFDbEJBLE1BQUFBLGtCQUFrQixDQUFDQyxTQUFuQixHQUErQixJQUEvQjtBQUNEOzs7V0FDRCxrQkFBa0Q7QUFDaEQsYUFBTyxvQkFBQyxpQkFBRCxPQUFQO0FBQ0Q7OztFQVA4QkwsS0FBSyxDQUFDTSxTOztBQVV2Q0MsTUFBTSxDQUFDQyxPQUFQLEdBQWlCSixrQkFBakIiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIENvcHlyaWdodCAoYykgRmFjZWJvb2ssIEluYy4gYW5kIGl0cyBhZmZpbGlhdGVzLlxuICpcbiAqIFRoaXMgc291cmNlIGNvZGUgaXMgbGljZW5zZWQgdW5kZXIgdGhlIE1JVCBsaWNlbnNlIGZvdW5kIGluIHRoZVxuICogTElDRU5TRSBmaWxlIGluIHRoZSByb290IGRpcmVjdG9yeSBvZiB0aGlzIHNvdXJjZSB0cmVlLlxuICpcbiAqIEBmb3JtYXRcbiAqIEBmbG93IHN0cmljdC1sb2NhbFxuICovXG5cbid1c2Ugc3RyaWN0JztcblxuY29uc3QgUmVhY3QgPSByZXF1aXJlKCdyZWFjdCcpO1xuXG5jb25zdCByZXF1aXJlTmF0aXZlQ29tcG9uZW50ID0gcmVxdWlyZSgnLi4vLi4vLi4vUmVhY3ROYXRpdmUvcmVxdWlyZU5hdGl2ZUNvbXBvbmVudCcpO1xuXG5pbXBvcnQgdHlwZSB7SG9zdENvbXBvbmVudH0gZnJvbSAnLi4vLi4vLi4vUmVuZGVyZXIvc2hpbXMvUmVhY3ROYXRpdmVUeXBlcyc7XG5cbmNvbnN0IFJDVFJlZnJlc2hDb250cm9sOiBIb3N0Q29tcG9uZW50PG1peGVkPiA9IHJlcXVpcmVOYXRpdmVDb21wb25lbnQ8bWl4ZWQ+KFxuICAnUkNUUmVmcmVzaENvbnRyb2wnLFxuKTtcblxuY2xhc3MgUmVmcmVzaENvbnRyb2xNb2NrIGV4dGVuZHMgUmVhY3QuQ29tcG9uZW50PHsuLi59PiB7XG4gIHN0YXRpYyBsYXRlc3RSZWY6ID9SZWZyZXNoQ29udHJvbE1vY2s7XG4gIGNvbXBvbmVudERpZE1vdW50KCkge1xuICAgIFJlZnJlc2hDb250cm9sTW9jay5sYXRlc3RSZWYgPSB0aGlzO1xuICB9XG4gIHJlbmRlcigpOiBSZWFjdC5FbGVtZW50PHR5cGVvZiBSQ1RSZWZyZXNoQ29udHJvbD4ge1xuICAgIHJldHVybiA8UkNUUmVmcmVzaENvbnRyb2wgLz47XG4gIH1cbn1cblxubW9kdWxlLmV4cG9ydHMgPSBSZWZyZXNoQ29udHJvbE1vY2s7XG4iXX0=
