@@ -21,18 +21,21 @@ const backgroundImg = 'https://images.unsplash.com/photo-1519750783826-e2420f4d6
 
 
 const HomeScreen = () => {
+  // destructuring users from state managment with useSelector, userReducer is the reducer function
   const { users } = useSelector(state => state.userReducer);
-  const dispatch = useDispatch();
   const [isLoading, setIsloading] = useState(false);
-
+  const dispatch = useDispatch();
+  
   const Yscroll = React.useRef(new Animated.Value(0)).current;
-
+// calling API from redux actions "import { getUsers } from "../redux/actions""
+// I used a setTimeout due to a lot of calls to the API and this leaded me to a Time breakout
   useEffect(() => {
     setTimeout(() => {
       dispatch(getUsers())
     },6000)
   }, [dispatch])
 
+  // renderUser is the box that contains all the information of the user (image, login name and date)
   const renderUser = ({ item, index }) => {
     const scale = Yscroll.interpolate({
       inputRange: [
@@ -58,8 +61,12 @@ const HomeScreen = () => {
         />
         <View style={styles.wrapText}>
           <Text style={styles.fontSize}>{item.owner.login}</Text>
+          {/* I formated the date to show YYYY-MM-DD the original format had also Time I used regex to exlude the parts from T and after */}
           <Text style={styles.created}>{item.created_at.split(/T(.+)/)[0]}</Text>
         </View>
+
+        {/* Here are information for the 2nd API (for experiment) and due to request Limit  */}
+
         {/* <Image
           style={styles.image}
           source={{uri: `${item.anime_img}`}}
@@ -70,12 +77,13 @@ const HomeScreen = () => {
           <Text style={styles.fontSize}>{item.anime_name}</Text>
           <Text style={styles.created}>{item.anime_id}</Text>
         </View> */}
+
       </Animated.View>
     )
 
   }
 
-
+  // this returns the whole screen including the title the background image and the flatlist that includes our boxes with user info
   return (
     <SafeAreaView style={styles.container}>
       <Image
@@ -88,9 +96,11 @@ const HomeScreen = () => {
       {
         isLoading ? <ActivityIndicator /> : (
           <Animated.FlatList
+
+            // Here are information for the 2nd API (for experiment) and due to request Limit
             // data={users.data}
+
             data={users}
-            keyExtractor={item => `key-${item.id}`}
             renderItem={renderUser}
             keyExtractor={(item, index) => String(index)}
             contentContainerStyle={{
@@ -107,6 +117,8 @@ const HomeScreen = () => {
     </SafeAreaView>
   );
 };
+
+// here is the styling for the screen
 
 const styles = StyleSheet.create({
   fontSize: {
@@ -127,8 +139,11 @@ const styles = StyleSheet.create({
   image: {
     width: 100,
     borderRadius: 100,
+
+    // Here are information for the 2nd API (for experiment) and due to request Limit
     // width: 100,
     // borderRadius: 50,
+
     height: imgHeight
   },
   wrapText: {

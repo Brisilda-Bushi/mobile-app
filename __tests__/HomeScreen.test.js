@@ -10,8 +10,6 @@ jest.useFakeTimers();
 
 jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
 
-const store = { Store };
-
 const tree = renderer.create(
   <Provider store={Store}>
     <HomeScreen/>
@@ -35,8 +33,8 @@ test("call timeout", () => {
 
 test("checking mock api call with axios", () => {
   jest.mock("axios", () => ({
-    get: jest.fn(() => {
-      return Promise.resolve();
+    get: jest.fn(async () => {
+      return await Promise.resolve();
     })
   }));
 })
@@ -44,3 +42,4 @@ test("checking mock api call with axios", () => {
 test("status stored properly", () => {
   expect(userReducer(undefined, {})).toEqual({users: []})
 })
+
