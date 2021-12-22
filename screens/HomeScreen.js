@@ -3,7 +3,6 @@ import { useSelector,useDispatch } from 'react-redux';
 import { getUsers } from "../redux/actions"
 import {
   ActivityIndicator,
-  FlatList,
   SafeAreaView,
   StyleSheet,
   Text,
@@ -169,7 +168,6 @@ const styles = StyleSheet.create({
     flex: 1,
     top: "5%",
   }
-
 });
 
 export default HomeScreen;
